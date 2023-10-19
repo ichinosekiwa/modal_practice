@@ -40,7 +40,8 @@ main {
 }
 
 .open-btn {
-    padding-top: 200px;
+   width: 300px;
+   margin: 200px auto 0;
 }
 .open-btn button {
     padding: 24px 40px;
