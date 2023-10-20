@@ -2,6 +2,7 @@
 
 const openButton = document.querySelector('.open-btn');
 const modalWindow = document.querySelector('.modal');
+const modalBox = document.querySelector('.modal-box');
 const decision = document.querySelector('.modal-btn');
 const mainContainer = document.querySelector('.container');
 
@@ -16,10 +17,15 @@ function closeModal() {
     modalWindow.classList.remove('active');
 }
 //決定ボタンで閉じる
-decision.addEventListener('click', () => {
+decision.addEventListener('click', (e) => {
     closeModal();
 });
+
 //modal領域外で閉じる
-mainContainer.addEventListener('click', () => {
+modalWindow.addEventListener('click', () => {
     closeModal();
+});
+//modal-boxのバブリングを止める
+modalBox.addEventListener("click", function(e) {
+    e.stopPropagation();
 });
