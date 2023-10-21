@@ -6,7 +6,7 @@ const modalBox = document.querySelector('.modal-box');
 const decision = document.querySelector('.modal-btn');
 const mainContainer = document.querySelector('.container');
 
-//modalをアクティブにして開く
+//modalを開く
 function openModal() {
     modalWindow.classList.add('active');
 }
@@ -16,12 +16,12 @@ openButton.addEventListener('click', openModal);
 function closeModal() {
     modalWindow.classList.remove('active');
 }
-//決定ボタンで閉じる
-decision.addEventListener('click', (e) => {
+//決定ボタン
+decision.addEventListener('click', () => {
     closeModal();
 });
 
-//modal領域外で閉じる
+//modal領域外
 modalWindow.addEventListener('click', () => {
     closeModal();
 });
@@ -29,3 +29,22 @@ modalWindow.addEventListener('click', () => {
 modalBox.addEventListener("click", function(e) {
     e.stopPropagation();
 });
+
+// ラジオボタンの値を取り出す
+function buttonClick() {
+    let checkValue = '';
+
+    radioAge.forEach((radio) => {
+        if (radio.checked) {
+            checkValue = radio.value;
+        }
+    });
+    console.log(checkValue + ' です');
+}
+
+// ラジオボタン10代をデフォルトで選択しておく
+let radioAge = document.getElementsByName('age');
+radioAge[0].checked = true;
+
+let checkButton = document.getElementById('checkButton');
+checkButton.addEventListener('click', buttonClick)
