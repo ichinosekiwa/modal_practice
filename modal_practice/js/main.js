@@ -25,7 +25,7 @@ decision.addEventListener('click', () => {
 modalWindow.addEventListener('click', () => {
     closeModal();
 });
-//modal-boxのバブリングを止める
+//modal-box バブリングを止める
 modalBox.addEventListener("click", function(e) {
     e.stopPropagation();
 });
@@ -39,12 +39,14 @@ function buttonClick() {
             checkValue = radio.value;
         }
     });
-    console.log(checkValue + ' です');
+    const resultItem = document.getElementById('result');
+    resultItem.textContent = checkValue;
 }
+let checkButton = document.getElementById('checkButton');
+checkButton.addEventListener('click', buttonClick);
+
 
 // ラジオボタン10代をデフォルトで選択しておく
 let radioAge = document.getElementsByName('age');
 radioAge[0].checked = true;
 
-let checkButton = document.getElementById('checkButton');
-checkButton.addEventListener('click', buttonClick)
