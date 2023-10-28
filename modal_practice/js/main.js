@@ -5,6 +5,8 @@ const modalWindow = document.querySelector('.modal');
 const modalBox = document.querySelector('.modal-box');
 const decision = document.querySelector('.modal-btn');
 const mainContainer = document.querySelector('.container');
+// 選択した値をブラウザに表示
+const radioAge = document.getElementsByName('age');
 
 //modalを開く
 function openModal() {
@@ -46,7 +48,4 @@ let checkButton = document.getElementById('checkButton');
 checkButton.addEventListener('click', buttonClick);
 
 
-// ラジオボタン10代をデフォルトで選択しておく
-let radioAge = document.getElementsByName('age');
-radioAge[0].checked = true;
 
