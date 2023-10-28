@@ -15,6 +15,8 @@ const radioArea = document.getElementsByName('area');
 // modalを開く
 function openModal() {
     modalWindow.classList.add('active');
+    modalArea.classList.remove('is-show');
+    modalAge.classList.add('is-show');
 }
 openButton.addEventListener('click', openModal);
 
