@@ -12,7 +12,7 @@ const modalArea = document.getElementById('modal-area');
 const radioAge = document.getElementsByName('age');
 const radioArea = document.getElementsByName('area');
 
-//modalを開く
+// modalを開く
 function openModal() {
     modalWindow.classList.add('active');
 }
@@ -25,17 +25,11 @@ function nextModal() {
 }
 nextBtn.addEventListener('click', nextModal);
 
-//modalを閉じる
+// 決定ボタンでmodalを閉じる
 function closeModal() {
     modalWindow.classList.remove('active');
 }
-//決定ボタン
 decision.addEventListener('click', () => {
-    closeModal();
-});
-
-//modal領域外
-modalWindow.addEventListener('click', () => {
     closeModal();
 });
 
@@ -62,7 +56,14 @@ function buttonClick() {
 const checkButton = document.getElementById('checkButton');
 checkButton.addEventListener('click', buttonClick);
 
-//modal-box バブリングを止める
+// モーダルを領域外と決定ボタンクリックだけで閉じる
+// 領域外
+modalWindow.addEventListener('click', (e) => {
+    if (e.target === modalWindow) {
+        closeModal();
+    }
+});
+// modal-box バブリングを止める
 modalBox.addEventListener("click", function(e) {
     e.stopPropagation();
 });
